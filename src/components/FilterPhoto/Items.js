@@ -1,0 +1,30 @@
+import Tabs from "./Tabs";
+
+import { useState } from "react";
+import Tabt from "./Tabt";
+function Items({ data }) {
+  return (
+    <div>
+      <div className="row ">
+        {data.map((value) => {
+          const { id, image, title, description } = value;
+          return (
+            <div className="col-sm-3 my-3" key={id}>
+              <div className="card bg-light text-center">
+                <img
+                  src={image}
+                  className="img-fluid"
+                  style={{ height: "200px" }}
+                />
+                <h3>{title}</h3>
+                <p>{description}</p>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+export default Items;
